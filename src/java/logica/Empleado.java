@@ -233,5 +233,4 @@ public class Empleado implements Serializable {
     public String toString() {
         return "Empleado{" + "id_empleado=" + id_empleado + ", nombre=" + nombre + ", apellido=" + apellido + ", direccion=" + direccion + ", DNI=" + DNI + ", fecha_nac=" + fecha_nac + ", nacionalidad=" + nacionalidad + ", celular=" + celular + ", email=" + email + ", cargo=" + cargo + ", sueldo=" + sueldo + ", lista_ventas=" + lista_ventas + '}';
     }
-
 }

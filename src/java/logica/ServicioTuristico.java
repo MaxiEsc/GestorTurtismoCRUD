@@ -6,26 +6,26 @@ import javax.persistence.*;
 
 @Entity
 public class ServicioTuristico implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "codigo")
-      Integer codigo;
-    
+    Integer codigo;
+
     @Basic
-      String nombre;
-      String descripcion_breve;
-      String destino_servicio;
-      Double costo_servicio;
-    
+    String nombre;
+    String descripcion_breve;
+    String destino_servicio;
+    Double costo_servicio;
+
     @Temporal(TemporalType.DATE)
-      Date fecha_servicio;
-    
+    Date fecha_servicio;
+
     @ManyToMany
-      List<PaqueteTuristico> paquetes;
-    
+    List<PaqueteTuristico> paquetes;
+
     @OneToMany
-     List<Ventas> ventas;
+    List<Ventas> ventas;
 
     public ServicioTuristico() {
     }
@@ -46,8 +46,6 @@ public class ServicioTuristico implements Serializable {
         this.costo_servicio = costo_servicio;
         this.fecha_servicio = fecha_servicio;
     }
-    
-    
 
     public ServicioTuristico(String nombre, String descripcion_breve, String destino_servicio, Double costo_servicio, Date fecha_servicio, List<PaqueteTuristico> paquetes, List<Ventas> ventas) {
         this.nombre = nombre;
@@ -57,7 +55,7 @@ public class ServicioTuristico implements Serializable {
         this.fecha_servicio = fecha_servicio;
         this.paquetes = paquetes;
         this.ventas = ventas;
-    }   
+    }
 
     public Integer getCodigo() {
         return codigo;
@@ -121,11 +119,10 @@ public class ServicioTuristico implements Serializable {
 
     public void setVentas(List<Ventas> ventas) {
         this.ventas = ventas;
-    }     
+    }
 
     @Override
     public String toString() {
         return "ServicioTuristico{" + "codigo=" + codigo + ", nombre=" + nombre + ", descripcion_breve=" + descripcion_breve + ", destino_servicio=" + destino_servicio + ", fecha_servicio=" + fecha_servicio + ", costo_servicio=" + costo_servicio + '}';
-    }   
-    
+    }
 }

@@ -54,7 +54,7 @@ public class ModificarEmpleado extends HttpServlet {
             
             Integer id_Usuario = id_Empleado - 1;
             String nombreUsuario = request.getParameter("nombreUsuario");
-            String contraseniaUser = request.getParameter("contraseniaUsuario");
+            String contraseniaUser = request.getParameter("contrasenia");
 
            
 
@@ -78,7 +78,7 @@ public class ModificarEmpleado extends HttpServlet {
             
             if (con.existeEmpleado(id_Empleado)) {
 
-                Usuario aux = new Usuario(id_Usuario, nombre, contraseniaUser);
+                Usuario aux = new Usuario(id_Usuario, nombreUsuario, contraseniaUser);
                 Empleado nuevo = new Empleado(id_Empleado, nombre, apellido, direccion, dni, nacionalidad, celular, email, cargo, sueldo, fecha, aux, null);
                 
                 con.actualizarEmpleado(nuevo, aux);

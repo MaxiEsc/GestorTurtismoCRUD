@@ -76,7 +76,7 @@ public class ModificarCliente extends HttpServlet {
                 
                 con.actualizarCliente(aux);
 
-                request.setAttribute("mensINFO", "Cliente Agregado Correctamente");
+                request.setAttribute("mensINFO", "Cliente Modificado Correctamente");
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/exito.jsp");
                 dispatcher.forward(request, response);
 

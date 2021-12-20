@@ -2,6 +2,7 @@ package servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import logica.Controladora;
+import logica.*;
 
 @WebServlet(name = "LoginSession", urlPatterns = {"/LoginSession"})
 public class LoginSession extends HttpServlet {
@@ -36,6 +37,7 @@ public class LoginSession extends HttpServlet {
         String contra = request.getParameter("regPassword");
 
         if (con.controlUser(usuario, contra)) {
+           
             HttpSession sesionUsuario = request.getSession(true);
             sesionUsuario.setAttribute("Contrasenia", contra);
             sesionUsuario.setAttribute("Usuario", usuario);
